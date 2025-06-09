@@ -28,10 +28,13 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Blinds Ready Canada">
 
-    <!-- jQuery first, then Bootstrap JS -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 
-    <!-- Bootstrap Bundle JS -->
+    <!-- Bootstrap Bundle JS (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://kit.fontawesome.com/0bb3ffc914.js" crossorigin="anonymous"></script>
@@ -72,7 +75,49 @@
         })(window, document, 'script', 'dataLayer', 'GTM-KTCMCT4J');</script>
     <!-- End Google Tag Manager -->
 
+    <style>
+        .modal-close-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 30px;
+            height: 30px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
 
+        .modal-close-btn:hover {
+            background: #555;
+            transform: scale(1.1);
+            transition: all 0.2s ease;
+        }
+
+        .modal-content {
+            border-radius: 10px;
+            position: relative;
+        }
+
+        /* Mobil için stil */
+        @media (max-width: 768px) {
+            .modal-close-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                right: 15px;
+                top: 15px;
+            }
+        }
+    </style>
 
 </head>
 
@@ -954,15 +999,15 @@
                         QUOTE</div>
                     <br>
                     <!-- Calendly inline widget begin -->
-                    <!-- <div class="calendly-inline-widget"
+                     <div class="calendly-inline-widget"
                         data-url="https://calendly.com/blindsready-sales/30min?hide_event_type_details=1&hide_gdpr_banner=1"
                         style="min-width:320px;height:600px;"></div>
                     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                        async></script> -->
+                        async></script> 
                     <!-- Calendly inline widget end -->
 
 
-                    <div class="content__form">
+                    <!-- <div class="content__form">
                         <form id="contactForm" onsubmit="return conMail()">
                             <div class="form__input">
                                 <div class="input__icon">
@@ -1020,7 +1065,7 @@
                                 <button type="submit" class="button button--default button--orange">Contact Us</button>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -1063,18 +1108,16 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+                <button type="button" onclick="closeModal()" class="modal-close-btn">×</button>
                 <div class="modal-body">
                     <div class="modal__form">
                         <div class="form__HS">
                             <div class="form__title">
                                 <h3>Fill out the form to get 45% OFF & FREE Quote.</h3>
-                                <p style="margin-top: 15px ; font-weight: 90; font-size: medium;">Get FREE Estimate</p>
+                                <p style="margin-top: 15px; font-weight: 90; font-size: medium;">Get FREE Estimate</p>
                             </div>
                             <div class="countdown">
                                 <div class="countdown__item">
@@ -1162,7 +1205,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 

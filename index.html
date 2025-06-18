@@ -162,7 +162,8 @@
             </nav>
 
             <div class="header__action">
-                <button class="button button--default button--orange klaviyo_form_trigger1">
+                <button class="button button--default button--orange klaviyo_form_trigger1" data-toggle="modal"
+                    data-target="#formModal">
                     GET FREE QUOTE
                 </button>
             </div>
@@ -170,7 +171,7 @@
         </div>
     </header>
 
-    <div class="klaviyo_form_trigger1" id="a"
+    <div class="klaviyo_form_trigger1" id="a" data-toggle="modal" data-target="#formModal"
         style="background-color: #F09E21; padding: 15px; font-size:20px; font-family:Montserrat, sans-serif ;  font-weight:bold;  text-align: center; margin-bottom: 1px; ">
         <h3 style="text-align: center;"><span style="color: #ffffff;"><strong>Click here to get 45% OFF blinds & shades
                     - Factory Direct!</strong></span></h3>
@@ -190,7 +191,8 @@
                     <h1 class="section__subtitle">Enjoy 45% OFF all blinds & shades - Valid on orders for 3 or more
                         windows.</h1>
                     <div class="section__action">
-                        <button class="button button--default button--orange klaviyo_form_trigger1">GET FREE
+                        <button class="button button--default button--orange klaviyo_form_trigger1" data-toggle="modal"
+                            data-target="#formModal">GET FREE
                             QUOTE</button>
                     </div>
 
@@ -516,9 +518,8 @@
     <section id="why__us">
         <div class="container">
             <div class="" style="text-align: center; margin-bottom: 20px;">
-                <button class="button button--default button--orange klaviyo_form_trigger1"
-                    style="  border-bottom: 1px solid #6f42c1;">GET FREE
-                    QUOTE</button>
+                <button class="button button--default button--orange klaviyo_form_trigger1" data-toggle="modal"
+                    data-target="#formModal" style="  border-bottom: 1px solid #6f42c1;">GET FREE QUOTE</button>
             </div>
             <br><br>
             <h2 class="title">Get Factory Direct
@@ -637,7 +638,8 @@
     <section id="our__services">
         <div class="container">
             <div class="" style="text-align: center; margin-bottom: 20px;">
-                <button class="button button--default button--orange klaviyo_form_trigger1">GET FREE QUOTE</button>
+                <button class="button button--default button--orange klaviyo_form_trigger1" data-toggle="modal"
+                    data-target="#formModal">GET FREE QUOTE</button>
             </div>
             <h3 class="title">Our Products <span style="color: #F09E21;"></span></h3>
             <div class="subtext subtext--lined">Enjoy a stress-free window blinds & shades with our unique process.
@@ -868,7 +870,8 @@
     </section>
 
     <div class="" style="text-align: center; margin-bottom: 20px; margin-top: 2rem;">
-        <button class="button button--default button--orange klaviyo_form_trigger1">Get FREE QUOTE</button>
+        <button class="button button--default button--orange klaviyo_form_trigger1" data-toggle="modal"
+            data-target="#formModal">Get FREE QUOTE</button>
     </div>
 
 
@@ -999,15 +1002,16 @@
                         QUOTE</div>
                     <br>
                     <!-- Calendly inline widget begin -->
-                     <div class="calendly-inline-widget"
+                    <!-- <div class="calendly-inline-widget"
                         data-url="https://calendly.com/blindsready-sales/30min?hide_event_type_details=1&hide_gdpr_banner=1"
                         style="min-width:320px;height:600px;"></div>
                     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                        async></script> 
+                        async></script>  -->
                     <!-- Calendly inline widget end -->
 
 
-                    <!-- <div class="content__form">
+
+                    <div class="content__form">
                         <form id="contactForm" onsubmit="return conMail()">
                             <div class="form__input">
                                 <div class="input__icon">
@@ -1065,7 +1069,7 @@
                                 <button type="submit" class="button button--default button--orange">Contact Us</button>
                             </div>
                         </form>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -1108,10 +1112,10 @@
 
 
     <!-- Modal -->
-    <!-- <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <button type="button" onclick="closeModal()" class="modal-close-btn">×</button>
+                <button type="button" class="close" data-dismiss="modal">×</button>
                 <div class="modal-body">
                     <div class="modal__form">
                         <div class="form__HS">
@@ -1205,7 +1209,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
 
 
@@ -1314,10 +1318,10 @@
 
 
 
-    <!-- <div class="fixed__area-wrapper ">
+    <div class="fixed__area-wrapper ">
         <button class="button button--default button--orange " data-toggle="modal" data-target="#formModal">Get Free
             Estimate</button>
-    </div> -->
+    </div>
 
 
 
@@ -1554,7 +1558,7 @@
             }
         }
     </script>
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function ()
         {
             const buttons = document.querySelectorAll(".klaviyo_form_trigger1");
@@ -1571,21 +1575,21 @@
                 });
             });
         });
-    </script>
+    </script> -->
 
 
     <!-- Calendly link widget begin -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <!-- <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <a href=""
-        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/blindsready-sales/30min?hide_event_type_details=1&hide_gdpr_banner=1'});return false;"></a>
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/blindsready-sales/30min?hide_event_type_details=1&hide_gdpr_banner=1'});return false;"></a> -->
     <!-- Calendly link widget end -->
 
     <!-- Calendly badge widget begin -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <!-- <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script
-        type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/blindsready-sales/30min?hide_event_type_details=1&hide_gdpr_banner=1', text: 'SCHEDULE FREE QUOTE', color: '#0069ff', textColor: '#ffffff' }); }</script>
+        type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/blindsready-sales/30min?hide_event_type_details=1&hide_gdpr_banner=1', text: 'SCHEDULE FREE QUOTE', color: '#0069ff', textColor: '#ffffff' }); }</script> -->
     <!-- Calendly badge widget end -->
 
 

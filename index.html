@@ -1051,6 +1051,33 @@
                             <div class="form__input">
                                 <div class="input__icon">
                                 </div>
+                                <select name="city" id="contactFormCity" required onchange="checkContactCity(this)"
+                                    style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; background-color: white; outline: none; box-shadow: inset 0 1px 2px rgba(0,0,0,.1);">
+                                    <option value="" disabled selected>Select City</option>
+                                    <option value="Brampton">Brampton</option>
+                                    <option value="Brantford">Brantford</option>
+                                    <option value="Burlington">Burlington</option>
+                                    <option value="Cambridge">Cambridge</option>
+                                    <option value="Elmira">Elmira</option>
+                                    <option value="Guelph">Guelph</option>
+                                    <option value="Hamilton">Hamilton</option>
+                                    <option value="Kitchener">Kitchener</option>
+                                    <option value="London">London</option>
+                                    <option value="Mississauga">Mississauga</option>
+                                    <option value="Niagara">Niagara</option>
+                                    <option value="Stratford">Stratford</option>
+                                    <option value="Waterloo">Waterloo</option>
+                                    <option value="Woodstock">Woodstock</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div id="contactCityError"
+                                    style="color: #ff0000; font-size: 12px; margin-top: 5px; display: none;">
+                                    Sorry, we only serve cities listed.
+                                </div>
+                            </div>
+                            <div class="form__input">
+                                <div class="input__icon">
+                                </div>
                                 <select name="windowCount" id="contactFormWindowCount" required
                                     onchange="checkContactWindowCount(this)"
                                     style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; background-color: white; outline: none; box-shadow: inset 0 1px 2px rgba(0,0,0,.1);">
@@ -1121,7 +1148,8 @@
                         <div class="form__HS">
                             <div class="form__title">
                                 <h3>Fill out the form to get 45% OFF & FREE Quote.</h3>
-                                <p style="margin-top: 15px; font-weight: 90; font-size: medium;">The discount is valid for 3+ windows</p>
+                                <p style="margin-top: 15px; font-weight: 90; font-size: medium;">The discount is valid
+                                    for 3+ windows</p>
                             </div>
                             <div class="countdown">
                                 <div class="countdown__item">
@@ -1180,6 +1208,33 @@
                                         </div>
                                         <textarea name="message" id="message" rows="3"
                                             placeholder="How Can We Help You?" required></textarea>
+                                    </div>
+                                    <div class="form__input">
+                                        <div class="input__icon">
+                                        </div>
+                                        <select name="city" id="city" required onchange="checkCity(this)"
+                                            style="width: 100%; padding: 10px; border: 1px solid #33475b; border-radius: 5px; background-color: white; outline: none; box-shadow: inset 0 1px 2px rgba(0,0,0,.1);">
+                                            <option value="" disabled selected>Select City</option>
+                                            <option value="Brampton">Brampton</option>
+                                            <option value="Brantford">Brantford</option>
+                                            <option value="Burlington">Burlington</option>
+                                            <option value="Cambridge">Cambridge</option>
+                                            <option value="Elmira">Elmira</option>
+                                            <option value="Guelph">Guelph</option>
+                                            <option value="Hamilton">Hamilton</option>
+                                            <option value="Kitchener">Kitchener</option>
+                                            <option value="London">London</option>
+                                            <option value="Mississauga">Mississauga</option>
+                                            <option value="Niagara">Niagara</option>
+                                            <option value="Stratford">Stratford</option>
+                                            <option value="Waterloo">Waterloo</option>
+                                            <option value="Woodstock">Woodstock</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <div id="cityError"
+                                            style="color: #ff0000; font-size: 12px; margin-top: 5px; display: none;">
+                                            Sorry, we only serve cities listed.
+                                        </div>
                                     </div>
                                     <div class="form__input">
                                         <div class="input__icon">
@@ -1404,7 +1459,15 @@
             var confirm = document.getElementById("confirm").value;
             var address = document.getElementById("address").value;
             var message = document.getElementById("message").value;
+            var city = document.getElementById("city").value;
             var windowCount = document.getElementById("windowCount").value;
+
+            if (city === "Other")
+            {
+                document.getElementById("cityError").style.display = 'block';
+                document.getElementById("city").style.borderColor = '#ff0000';
+                return false;
+            }
 
             if (windowCount === "less")
             {
@@ -1413,7 +1476,7 @@
                 return false;
             }
 
-            if (name == "" || phone == "" || email == "" || message == "" || address == "" || confirm == "" || windowCount == "")
+            if (name == "" || phone == "" || email == "" || message == "" || address == "" || confirm == "" || city == "" || windowCount == "")
             {
                 alert("Please fill in all fields.");
                 return false;
@@ -1432,6 +1495,7 @@
                 message: message,
                 address: address,
                 confirm: confirm,
+                city: city,
                 windowCount: windowCount
             };
 
@@ -1448,6 +1512,7 @@
                     document.getElementById("message").value = "";
                     document.getElementById("address").value = "";
                     document.getElementById("confirm").value = "";
+                    document.getElementById("city").value = "";
                     document.getElementById("windowCount").value = "";
                     console.log(res);
                     window.location = "thank-you.html";
@@ -1472,7 +1537,15 @@
             var address = document.getElementById("contactFormAddress").value;
             var confirm = document.getElementById("contactFormConfirm").value;
             var message = document.getElementById("contactFormProjectDescription").value;
+            var city = document.getElementById("contactFormCity").value;
             var windowCount = document.getElementById("contactFormWindowCount").value;
+
+            if (city === "Other")
+            {
+                document.getElementById("contactCityError").style.display = 'block';
+                document.getElementById("contactFormCity").style.borderColor = '#ff0000';
+                return false;
+            }
 
             if (windowCount === "less")
             {
@@ -1481,7 +1554,7 @@
                 return false;
             }
 
-            if (name == "" || phone == "" || email == "" || message == "" || address == "" || confirm == "" || windowCount == "")
+            if (name == "" || phone == "" || email == "" || message == "" || address == "" || confirm == "" || city == "" || windowCount == "")
             {
                 alert("Please fill in all fields.");
                 return false;
@@ -1494,6 +1567,7 @@
                 message: message,
                 address: address,
                 confirm: confirm,
+                city: city,
                 windowCount: windowCount
             };
 
@@ -1510,6 +1584,7 @@
                     document.getElementById("contactFormProjectDescription").value = "";
                     document.getElementById("contactFormAddress").value = "";
                     document.getElementById("contactFormConfirm").value = "";
+                    document.getElementById("contactFormCity").value = "";
                     document.getElementById("contactFormWindowCount").value = "";
                     console.log(res);
                     window.location = "thank-you.html";
@@ -1548,6 +1623,34 @@
         {
             const errorDiv = document.getElementById('contactWindowCountError');
             if (selectElement.value === 'less')
+            {
+                errorDiv.style.display = 'block';
+                selectElement.style.borderColor = '#ff0000';
+            } else
+            {
+                errorDiv.style.display = 'none';
+                selectElement.style.borderColor = '#ddd';
+            }
+        }
+
+        function checkCity(selectElement)
+        {
+            const errorDiv = document.getElementById('cityError');
+            if (selectElement.value === 'Other')
+            {
+                errorDiv.style.display = 'block';
+                selectElement.style.borderColor = '#ff0000';
+            } else
+            {
+                errorDiv.style.display = 'none';
+                selectElement.style.borderColor = '#33475b';
+            }
+        }
+
+        function checkContactCity(selectElement)
+        {
+            const errorDiv = document.getElementById('contactCityError');
+            if (selectElement.value === 'Other')
             {
                 errorDiv.style.display = 'block';
                 selectElement.style.borderColor = '#ff0000';
